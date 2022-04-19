@@ -5,7 +5,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Transaction Full Details</b></h4>
+              <h4 class="modal-title"><b>Détails de la transaction</b></h4>
             </div>
             <div class="modal-body">
               <p>
@@ -14,10 +14,10 @@
               </p>
               <table class="table table-bordered">
                 <thead>
-                  <th>Product</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Subtotal</th>
+                  <th>Produit</th>
+                  <th>Prix</th>
+                  <th>Quantité</th>
+                  <th>Sous-total</th>
                 </thead>
                 <tbody id="detail">
                   <tr>
@@ -28,7 +28,7 @@
               </table>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Fermer</button>
             </div>
         </div>
     </div>
@@ -41,19 +41,19 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Update Account</b></h4>
+              <h4 class="modal-title"><b>MAJ du compte</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="profile_edit.php" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="firstname" class="col-sm-3 control-label">Firstname</label>
+                    <label for="firstname" class="col-sm-3 control-label">Prénom</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="lastname" class="col-sm-3 control-label">Lastname</label>
+                    <label for="lastname" class="col-sm-3 control-label">Nom</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>">
@@ -67,21 +67,21 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <label for="password" class="col-sm-3 control-label">Mot de passe</label>
 
                     <div class="col-sm-9">
                       <input type="password" class="form-control" id="password" name="password" value="<?php echo $user['password']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="contact" class="col-sm-3 control-label">Contact Info</label>
+                    <label for="contact" class="col-sm-3 control-label">Données de contact</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="contact" name="contact" value="<?php echo $user['contact_info']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="address" class="col-sm-3 control-label">Address</label>
+                    <label for="address" class="col-sm-3 control-label">Adresse</label>
 
                     <div class="col-sm-9">
                       <textarea class="form-control" id="address" name="address"><?php echo $user['address']; ?></textarea>
@@ -97,7 +97,7 @@
                 <hr>
                 
                 <div class="form-group">
-                    <label for="curr_password" class="col-sm-3 control-label">Current Password</label>
+                    <label for="curr_password" class="col-sm-3 control-label">MDP actuel</label>
 
                     <div class="col-sm-9">
                       <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="input current password to save changes" required>
@@ -105,8 +105,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Fermer</button>
+              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> MAJ</button>
               </form>
             </div>
         </div>
