@@ -46,7 +46,7 @@
 		                  <span class="fa fa-angle-right"></span>
 		                </a>
 		            </div>
-		            <h2>Monthly Top Sellers</h2>
+		            <h2>Top sellers du mois</h2>
 		       		<?php
 		       			$month = date('m');
 		       			$conn = $pdo->open();
@@ -78,7 +78,7 @@
 							if($inc == 2) echo "<div class='col-sm-4'></div></div>";
 						}
 						catch(PDOException $e){
-							echo "There is some problem in connection: " . $e->getMessage();
+							echo "Un prob de connexion est survenu: " . $e->getMessage();
 						}
 
 						$pdo->close();

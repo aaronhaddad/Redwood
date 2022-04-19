@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="box box-solid">
 	  	<div class="box-header with-border">
-	    	<h3 class="box-title"><b>Most Viewed Today</b></h3>
+	    	<h3 class="box-title"><b>Les plus vus aujourd'hui</b></h3>
 	  	</div>
 	  	<div class="box-body">
 	  		<ul id="trending">
