@@ -23,24 +23,24 @@
 						}
 					}
 					else{
-						$_SESSION['error'] = 'Incorrect Password';
+						$_SESSION['error'] = 'MDP ghalet';
 					}
 				}
 				else{
-					$_SESSION['error'] = 'Account not activated.';
+					$_SESSION['error'] = 'Compte non activé.';
 				}
 			}
 			else{
-				$_SESSION['error'] = 'Email not found';
+				$_SESSION['error'] = 'Email introuvable';
 			}
 		}
 		catch(PDOException $e){
-			echo "There is some problem in connection: " . $e->getMessage();
+			echo "Un problème de connexion est survenu: " . $e->getMessage();
 		}
 
 	}
 	else{
-		$_SESSION['error'] = 'Input login credentails first';
+		$_SESSION['error'] = 'Veuillez d\'abord entrez vos coordonnées';
 	}
 
 	$pdo->close();

@@ -30,13 +30,13 @@
 		                </ol>
 		                <div class="carousel-inner">
 		                  <div class="item active">
-		                    <img src="images/banner1.png" alt="First slide">
+		                    <img src="https://scontent-lis1-1.xx.fbcdn.net/v/t1.6435-9/162033565_3947976801928425_6623721953686123530_n.png?_nc_cat=111&ccb=1-5&_nc_sid=e3f864&_nc_ohc=9DrUrQGNQ1QAX_9dxht&_nc_ht=scontent-lis1-1.xx&oh=00_AT8VTYCkKGXaPS443G8NLFesMTzCBYKW99zEVUmxxbmjAQ&oe=62824454" alt="First slide">
 		                  </div>
 		                  <div class="item">
-		                    <img src="images/banner2.png" alt="Second slide">
+		                    <img src="https://www.worldtravelguide.net/wp-content/uploads/2017/03/shu-Tunisia-SidiBouSaid-760300645-1440x823.jpg" alt="Second slide">
 		                  </div>
 		                  <div class="item">
-		                    <img src="images/banner3.png" alt="Third slide">
+		                    <img src="https://www.jawharafm.net/fr/imageResize/resize/francais_image2_45480_1479307297.jpg" alt="Third slide">
 		                  </div>
 		                </div>
 		                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

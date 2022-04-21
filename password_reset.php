@@ -19,15 +19,15 @@
       }
     ?>
   	<div class="login-box-body">
-    	<p class="login-box-msg">Enter new password</p>
+    	<p class="login-box-msg">Entrez le nv mdp</p>
 
     	<form action="password_new.php?code=<?php echo $_GET['code']; ?>&user=<?php echo $_GET['user']; ?>" method="POST">
       		<div class="form-group has-feedback">
-        		<input type="password" class="form-control" name="password" placeholder="New password" required>
+        		<input type="password" class="form-control" name="password" placeholder="MDP" required>
         		<span class="glyphicon glyphicon-lock form-control-feedback"></span>
       		</div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="repassword" placeholder="Re-type password" required>
+            <input type="password" class="form-control" name="repassword" placeholder="aawed ekteb" required>
             <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
           </div>
       		<div class="row">

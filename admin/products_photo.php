@@ -20,7 +20,7 @@
 		try{
 			$stmt = $conn->prepare("UPDATE products SET photo=:photo WHERE id=:id");
 			$stmt->execute(['photo'=>$new_filename, 'id'=>$id]);
-			$_SESSION['success'] = 'Product photo updated successfully';
+			$_SESSION['success'] = 'Photo maj done';
 		}
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();
@@ -30,7 +30,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Select product to update photo first';
+		$_SESSION['error'] = 'Selectionner produit avant';
 	}
 
 	header('location: products.php');

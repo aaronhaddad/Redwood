@@ -12,7 +12,7 @@
 		$row = $stmt->fetch();
 
 		if($row['numrows'] > 0){
-			$_SESSION['error'] = 'Category already exist';
+			$_SESSION['error'] = 'Catégorie existante';
 		}
 		else{
 			try{
@@ -28,7 +28,7 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Fill up category form first';
+		$_SESSION['error'] = 'Remplissez le formulaire';
 	}
 
 	header('location: category.php');

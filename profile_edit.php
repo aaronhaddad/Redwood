@@ -32,7 +32,7 @@
 				$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, firstname=:firstname, lastname=:lastname, contact_info=:contact, address=:address, photo=:photo WHERE id=:id");
 				$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'contact'=>$contact, 'address'=>$address, 'photo'=>$filename, 'id'=>$user['id']]);
 
-				$_SESSION['success'] = 'Account updated successfully';
+				$_SESSION['success'] = 'MAJ du compte succès';
 			}
 			catch(PDOException $e){
 				$_SESSION['error'] = $e->getMessage();
@@ -40,7 +40,7 @@
 			
 		}
 		else{
-			$_SESSION['error'] = 'Incorrect password';
+			$_SESSION['error'] = 'MDP ghalet';
 		}
 	}
 	else{

@@ -61,8 +61,8 @@
 	    $pdf->AddPage();  
 	    $content = '';  
 	    $content .= '
-	      	<h2 align="center">TechSoft IT Solutions</h2>
-	      	<h4 align="center">SALES REPORT</h4>
+	      	<h2 align="center">Bsal</h2>
+	      	<h4 align="center">Vente</h4>
 	      	<h4 align="center">'.$from_title." - ".$to_title.'</h4>
 	      	<table border="1" cellspacing="0" cellpadding="3">  
 	           <tr>  
@@ -81,7 +81,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Need date range to provide sales print';
+		$_SESSION['error'] = 'Besoin de la date';
 		header('location: sales.php');
 	}
 ?>

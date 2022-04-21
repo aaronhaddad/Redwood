@@ -10,7 +10,7 @@
 			$stmt = $conn->prepare("DELETE FROM category WHERE id=:id");
 			$stmt->execute(['id'=>$id]);
 
-			$_SESSION['success'] = 'Category deleted successfully';
+			$_SESSION['success'] = 'Catégorie supprimé';
 		}
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();
@@ -19,7 +19,7 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Select category to delete first';
+		$_SESSION['error'] = 'Selectionner une catégorie avant de supprimer';
 	}
 
 	header('location: category.php');

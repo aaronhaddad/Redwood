@@ -12,7 +12,7 @@
 		
 	}
 	catch(PDOException $e){
-		echo "There is some problem in connection: " . $e->getMessage();
+		echo "Un problème de connexion est survenu: " . $e->getMessage();
 	}
 
 	//page view
@@ -71,7 +71,7 @@
 							            </span>
 							            <input type="hidden" value="<?php echo $product['prodid']; ?>" name="id">
 							        </div>
-			            			<button type="submit" class="btn btn-primary btn-lg btn-flat"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+			            			<button type="submit" class="btn btn-primary btn-lg btn-flat"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
 			            		</div>
 		            		</form>
 		            	</div>

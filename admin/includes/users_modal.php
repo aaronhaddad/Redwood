@@ -5,7 +5,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New User</b></h4>
+              <h4 class="modal-title"><b>Ajouter un nouveau utilisateur</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="users_add.php" enctype="multipart/form-data">
@@ -17,35 +17,35 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <label for="password" class="col-sm-3 control-label">MDP</label>
 
                     <div class="col-sm-9">
                       <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="firstname" class="col-sm-3 control-label">Firstname</label>
+                    <label for="firstname" class="col-sm-3 control-label">Prénom</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="firstname" name="firstname" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="lastname" class="col-sm-3 control-label">Lastname</label>
+                    <label for="lastname" class="col-sm-3 control-label">Nom</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="lastname" name="lastname" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="address" class="col-sm-3 control-label">Address</label>
+                    <label for="address" class="col-sm-3 control-label">Adresse</label>
 
                     <div class="col-sm-9">
                       <textarea class="form-control" id="address" name="address"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="contact" class="col-sm-3 control-label">Contact Info</label>
+                    <label for="contact" class="col-sm-3 control-label">Contact</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="contact" name="contact">
@@ -60,8 +60,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Fermer</button>
+              <button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Enregistrer</button>
               </form>
             </div>
         </div>
@@ -75,7 +75,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit User</b></h4>
+              <h4 class="modal-title"><b>Editer utilisateur</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="users_edit.php">
@@ -88,35 +88,35 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_password" class="col-sm-3 control-label">Password</label>
+                    <label for="edit_password" class="col-sm-3 control-label">MDP</label>
 
                     <div class="col-sm-9">
                       <input type="password" class="form-control" id="edit_password" name="password">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
+                    <label for="edit_firstname" class="col-sm-3 control-label">Prénom</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_firstname" name="firstname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_lastname" class="col-sm-3 control-label">Lastname</label>
+                    <label for="edit_lastname" class="col-sm-3 control-label">Nom</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_lastname" name="lastname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_address" class="col-sm-3 control-label">Address</label>
+                    <label for="edit_address" class="col-sm-3 control-label">Adresse</label>
 
                     <div class="col-sm-9">
                       <textarea class="form-control" id="edit_address" name="address"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_contact" class="col-sm-3 control-label">Contact Info</label>
+                    <label for="edit_contact" class="col-sm-3 control-label">Contact</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_contact" name="contact">
@@ -124,8 +124,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Fermer</button>
+              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> MAJ</button>
               </form>
             </div>
         </div>

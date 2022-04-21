@@ -10,7 +10,7 @@
 			$stmt = $conn->prepare("DELETE FROM users WHERE id=:id");
 			$stmt->execute(['id'=>$id]);
 
-			$_SESSION['success'] = 'User deleted successfully';
+			$_SESSION['success'] = 'Supprimé done';
 		}
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();
@@ -19,7 +19,7 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Select user to delete first';
+		$_SESSION['error'] = 'Selectionner un ';
 	}
 
 	header('location: users.php');

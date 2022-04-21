@@ -11,10 +11,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Sales History
+        Historique des ventes
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Acceuil</a></li>
         <li class="active">Sales</li>
       </ol>
     </section>
@@ -33,7 +33,7 @@
                     </div>
                     <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range">
                   </div>
-                  <button type="submit" class="btn btn-success btn-sm btn-flat" name="print"><span class="glyphicon glyphicon-print"></span> Print</button>
+                  <button type="submit" class="btn btn-success btn-sm btn-flat" name="print"><span class="glyphicon glyphicon-print"></span> Imprimer</button>
                 </form>
               </div>
             </div>
@@ -42,10 +42,10 @@
                 <thead>
                   <th class="hidden"></th>
                   <th>Date</th>
-                  <th>Buyer Name</th>
+                  <th>Nom de l'acheteur</th>
                   <th>Transaction#</th>
-                  <th>Amount</th>
-                  <th>Full Details</th>
+                  <th>Prix</th>
+                  <th>Détails</th>
                 </thead>
                 <tbody>
                   <?php

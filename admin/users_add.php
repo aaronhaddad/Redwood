@@ -16,7 +16,7 @@
 		$row = $stmt->fetch();
 
 		if($row['numrows'] > 0){
-			$_SESSION['error'] = 'Email already taken';
+			$_SESSION['error'] = 'Email dèja pris';
 		}
 		else{
 			$password = password_hash($password, PASSWORD_DEFAULT);
@@ -39,7 +39,7 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Fill up user form first';
+		$_SESSION['error'] = 'Remplissez le formulaire';
 	}
 
 	header('location: users.php');

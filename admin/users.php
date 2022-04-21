@@ -14,8 +14,8 @@
         Users
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Users</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Acceuil</a></li>
+        <li class="active">Utilisateur</li>
       </ol>
     </section>
 
@@ -26,7 +26,7 @@
           echo "
             <div class='alert alert-danger alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-warning'></i> Error!</h4>
+              <h4><i class='icon fa fa-warning'></i> Erreur!</h4>
               ".$_SESSION['error']."
             </div>
           ";
@@ -36,7 +36,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> Succès!</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -54,10 +54,10 @@
                 <thead>
                   <th>Photo</th>
                   <th>Email</th>
-                  <th>Name</th>
-                  <th>Status</th>
-                  <th>Date Added</th>
-                  <th>Tools</th>
+                  <th>Nom</th>
+                  <th>Statut</th>
+                  <th>Date ajoutée</th>
+                  <th>Outils</th>
                 </thead>
                 <tbody>
                   <?php
@@ -68,7 +68,7 @@
                       $stmt->execute(['type'=>0]);
                       foreach($stmt as $row){
                         $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
-                        $status = ($row['status']) ? '<span class="label label-success">active</span>' : '<span class="label label-danger">not verified</span>';
+                        $status = ($row['status']) ? '<span class="label label-success">active</span>' : '<span class="label label-danger">Non vérifié</span>';
                         $active = (!$row['status']) ? '<span class="pull-right"><a href="#activate" class="status" data-toggle="modal" data-id="'.$row['id'].'"><i class="fa fa-check-square-o"></i></a></span>' : '';
                         echo "
                           <tr>
@@ -84,9 +84,9 @@
                             </td>
                             <td>".date('M d, Y', strtotime($row['created_on']))."</td>
                             <td>
-                              <a href='cart.php?user=".$row['id']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Cart</a>
-                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
-                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
+                              <a href='cart.php?user=".$row['id']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Panier</a>
+                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editer</button>
+                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Supprimer</button>
                             </td>
                           </tr>
                         ";

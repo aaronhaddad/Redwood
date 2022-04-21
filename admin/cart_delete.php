@@ -11,7 +11,7 @@
 			$stmt = $conn->prepare("DELETE FROM cart WHERE id=:id");
 			$stmt->execute(['id'=>$cartid]);
 
-			$_SESSION['success'] = 'Product deleted from cart';
+			$_SESSION['success'] = 'Produit supprimé du panier';
 		}
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();

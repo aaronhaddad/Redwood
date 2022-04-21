@@ -75,7 +75,7 @@
 			}
 		}
 		else{
-			$_SESSION['error'] = 'Email not found';
+			$_SESSION['error'] = 'Email introuvable';
 		}
 
 		$pdo->close();

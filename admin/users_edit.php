@@ -36,7 +36,7 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit user form first';
+		$_SESSION['error'] = 'Remplissez tous le formulaire';
 	}
 
 	header('location: users.php');

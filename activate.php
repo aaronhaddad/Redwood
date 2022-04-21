@@ -4,10 +4,10 @@
 	if(!isset($_GET['code']) OR !isset($_GET['user'])){
 		$output .= '
 			<div class="alert alert-danger">
-                <h4><i class="icon fa fa-warning"></i> Error!</h4>
+                <h4><i class="icon fa fa-warning"></i> Erreur!</h4>
                 Code to activate account not found.
             </div>
-            <h4>You may <a href="signup.php">Signup</a> or back to <a href="index.php">Homepage</a>.</h4>
+            <h4>Vous pouvez <a href="signup.php">vous inscrire</a> ou retourner à la <a href="index.php">page d\'acceuil</a>.</h4>
 		'; 
 	}
 	else{
@@ -21,10 +21,10 @@
 			if($row['status']){
 				$output .= '
 					<div class="alert alert-danger">
-		                <h4><i class="icon fa fa-warning"></i> Error!</h4>
-		                Account already activated.
+		                <h4><i class="icon fa fa-warning"></i> Erreur!</h4>
+		                Compte dèja activé.
 		            </div>
-		            <h4>You may <a href="login.php">Login</a> or back to <a href="index.php">Homepage</a>.</h4>
+		            <h4>Vous pouvez <a href="signup.php">vous inscrire</a> ou retourner à la <a href="index.php">page d\'acceuil</a>.</h4>
 				';
 			}
 			else{
@@ -33,19 +33,19 @@
 					$stmt->execute(['status'=>1, 'id'=>$row['id']]);
 					$output .= '
 						<div class="alert alert-success">
-			                <h4><i class="icon fa fa-check"></i> Success!</h4>
-			                Account activated - Email: <b>'.$row['email'].'</b>.
+			                <h4><i class="icon fa fa-check"></i> Done!</h4>
+			                Compte activé - Email: <b>'.$row['email'].'</b>.
 			            </div>
-			            <h4>You may <a href="login.php">Login</a> or back to <a href="index.php">Homepage</a>.</h4>
+			            <h4><a href="login.php">Connectez-vous</a> ou aller à <a href="index.php">la page d\'acceuil</a>.</h4>
 					';
 				}
 				catch(PDOException $e){
 					$output .= '
 						<div class="alert alert-danger">
-			                <h4><i class="icon fa fa-warning"></i> Error!</h4>
+			                <h4><i class="icon fa fa-warning"></i> Erreur!</h4>
 			                '.$e->getMessage().'
 			            </div>
-			            <h4>You may <a href="signup.php">Signup</a> or back to <a href="index.php">Homepage</a>.</h4>
+			            <h4>Vous pouvez <a href="signup.php">vous inscrire</a> ou retourner à la <a href="index.php">page d\'acceuil</a>.</h4>
 					';
 				}
 
@@ -55,10 +55,10 @@
 		else{
 			$output .= '
 				<div class="alert alert-danger">
-	                <h4><i class="icon fa fa-warning"></i> Error!</h4>
+	                <h4><i class="icon fa fa-warning"></i> Erreur!</h4>
 	                Cannot activate account. Wrong code.
 	            </div>
-	            <h4>You may <a href="signup.php">Signup</a> or back to <a href="index.php">Homepage</a>.</h4>
+	            <h4>Vous pouvez <a href="signup.php">vous inscrire</a> ou retourner à la <a href="index.php">page d\'acceuil</a>.</h4>
 			';
 		}
 
