@@ -31,9 +31,15 @@
 	        		</div>
 	        		<?php
 	        			if(isset($_SESSION['user'])){
-	        				echo "
-	        					<div id='paypal-button'></div>
-	        				";
+							echo "
+								<form method='post'>
+							";
+							echo "
+								<input type=\"submit\" name=\"buy\"  style=\"background: coral; border: 0; width: 100%; height: 50px; color: white; font-size: 25px;\" value=\"Acheter !\" />
+							";
+							echo "
+								</form>
+							";
 	        			}
 	        			else{
 	        				echo "
@@ -53,6 +59,50 @@
   	<?php $pdo->close(); ?>
   	<?php include 'includes/footer.php'; ?>
 </div>
+
+<?php
+	if(array_key_exists('buy', $_POST)) {
+		$conn = $pdo->open();
+
+		try{
+			// $stmt = $conn->prepare("SELECT id FROM cart WHERE user_id=:id");
+			// $stmt->execute(['id'=>$_SESSION['user']]);
+			// $id = $stmt->fetch();
+
+			$stmt = $conn->prepare("INSERT INTO sales (user_id, pay_id, sales_date) VALUES (:user_id, :pay_id, :sales_date)");
+			$stmt->execute(['user_id'=>$_SESSION['user'], 'pay_id'=>uniqid('pay_'), 'sales_date'=>date("Y-m-d")]);
+
+			// njib product id o quantity mel cart
+			$stmt = $conn->prepare("SELECT product_id FROM cart WHERE user_id = :user_id");
+			$stmt->execute(['user_id'=>$_SESSION['user']]);
+			$product = $stmt->fetch();
+
+			$stmt = $conn->prepare("SELECT quantity FROM cart WHERE user_id = :user_id");
+			$stmt->execute(['user_id'=>$_SESSION['user']]);
+			$quantity = $stmt->fetch();
+
+			$stmt = $conn->prepare("INSERT INTO sales (user_id, pay_id, sales_date) VALUES (:user_id, :pay_id, :sales_date)");
+			$stmt->execute(['user_id'=>$_SESSION['user'], 'pay_id'=>uniqid('pay_'), 'sales_date'=>date("Y-m-d")]);
+			$sale_id = $conn->lastInsertId();
+
+			$stmt = $conn->prepare("INSERT INTO details (sales_id, product_id, quantity) VALUES (:sales_id, :product_id, :quantity)");
+			$stmt->execute(['sales_id'=>$sale_id, 'product_id'=>$product, 'quantity'=>$quantity]);
+
+			$stmt = $conn->prepare("DELETE FROM cart WHERE user_id=:user_id");
+			$stmt->execute(['user_id'=>$_SESSION['user']]);
+
+		}
+		catch(PDOException $e){
+			echo "Un problème de connexion est survenu: " . $e->getMessage();
+		}
+
+		$pdo->close();
+
+		header('location: index.php');
+
+		echo '<script>alert("Achat effectué avec succès")</script>';
+	}
+?>
 
 <?php include 'includes/scripts.php'; ?>
 <script>
@@ -154,46 +204,29 @@ function getTotal(){
 	});
 }
 </script>
-<!-- Paypal Express -->
+<!-- Paiment -->
 <script>
-paypal.Button.render({
-    env: 'sandbox', // change for production if app is live,
+payment: function(data, actions) {
+	return actions.payment.create({
+		payment: {
+			transactions: [
+				{
+					//total purchase
+					amount: { 
+						total: total, 
+						currency: '€' 
+					}
+				}
+			]
+		}
+	});
+},
 
-	client: {
-        sandbox:    'ASb1ZbVxG5ZFzCWLdYLi_d1-k5rmSjvBZhxP2etCxBKXaJHxPba13JJD_D3dTNriRbAv3Kp_72cgDvaZ',
-        //production: 'AaBHKJFEej4V6yaArjzSx9cuf-UYesQYKqynQVCdBlKuZKawDDzFyuQdidPOBSGEhWaNQnnvfzuFB9SM'
-    },
-
-    commit: true, // Show a 'Pay Now' button
-
-    style: {
-    	color: 'gold',
-    	size: 'small'
-    },
-
-    payment: function(data, actions) {
-        return actions.payment.create({
-            payment: {
-                transactions: [
-                    {
-                    	//total purchase
-                        amount: { 
-                        	total: total, 
-                        	currency: 'TND' 
-                        }
-                    }
-                ]
-            }
-        });
-    },
-
-    onAuthorize: function(data, actions) {
-        return actions.payment.execute().then(function(payment) {
-			window.location = 'sales.php?pay='+payment.id;
-        });
-    },
-
-}, '#paypal-button');
+onAuthorize: function(data, actions) {
+	return actions.payment.execute().then(function(payment) {
+		window.location = 'sales.php?pay='+payment.id;
+	});
+},
 </script>
 </body>
 </html>

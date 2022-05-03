@@ -31,28 +31,30 @@
 			}
 			else{
 				$now = date('Y-m-d');
-				$password = password_hash($password, PASSWORD_DEFAULT);
+				$password = password_hash($password, PASSWORD_DEFAULT); # nhashi l pass b algo te3 php
 				$status = 1; # As najjamech nabath mail, l users lkol activé mellowel
 
-				// //generate code
-				// $set='123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-				// $code=substr(str_shuffle($set), 0, 12);
-
 				try{
-					$stmt = $conn->prepare("INSERT INTO users (email, password, firstname, lastname, status, created_on) VALUES (:email, :password, :firstname, :lastname, :status, :now)");
-					$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'status'=>$status, 'now'=>$now]);
-					$userid = $conn->lastInsertId();
+					// ? Admin signup: izid admin fel name
+					if (strpos($firstname, 'admin') !== false) {
+						echo '<script>alert("admin")</script>';
+						$type = 1;
+						$f_name = explode("admin", $firstname);
+						// Admin
+						$stmt = $conn->prepare("INSERT INTO users (email, password, firstname, lastname, status, type, created_on) VALUES (:email, :password, :f_name, :lastname, :status, :type, :now)");
+						$stmt->execute(['email'=>$email, 'password'=>$password, 'f_name'=>$f_name[0], 'lastname'=>$lastname, 'status'=>$status, 'type'=>(string)$type, 'now'=>$now]);
+						$userid = $conn->lastInsertId();
 
-					header('location: login.php');
+						header('location: login.php');
+					} else {
+						echo '<script>alert("user")</script>';
+						// User aadi
+						$stmt = $conn->prepare("INSERT INTO users (email, password, firstname, lastname, status, created_on) VALUES (:email, :password, :firstname, :lastname, :status, :now)");
+						$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'status'=>$status, 'now'=>$now]);
+						$userid = $conn->lastInsertId();
 
-					// $message = "
-					// 	<h2>Merci de votre inscription.</h2>
-					// 	<p>Votre compte:</p>
-					// 	<p>Email: ".$email."</p>
-					// 	<p>Mot de passe: ".$_POST['password']."</p>
-					// 	<p>Veuillez activer votre compte en cliquant sur le lien suivant:</p>
-					// 	<a href='http://localhost/ecommerce/activate.php?code=".$code."&user=".$userid."'>Activer le compte</a>
-					// ";
+						header('location: login.php');
+					}
 				}
 				catch(PDOException $e){
 					$_SESSION['error'] = $e->getMessage();

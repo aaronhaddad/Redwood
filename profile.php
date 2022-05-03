@@ -48,12 +48,12 @@
 	        							<h4>Email:</h4>
 	        							<h4>Contact Info:</h4>
 	        							<h4>Address:</h4>
-	        							<h4>Member Since:</h4>
+	        							<h4>Membre depuis:</h4>
 	        						</div>
 	        						<div class="col-sm-9">
 	        							<h4><?php echo $user['firstname'].' '.$user['lastname']; ?>
 	        								<span class="pull-right">
-	        									<a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
+	        									<a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Editer</a>
 	        								</span>
 	        							</h4>
 	        							<h4><?php echo $user['email']; ?></h4>
@@ -67,7 +67,7 @@
 	        		</div>
 	        		<div class="box box-solid">
 	        			<div class="box-header with-border">
-	        				<h4 class="box-title"><i class="fa fa-calendar"></i> <b>Transaction History</b></h4>
+	        				<h4 class="box-title"><i class="fa fa-calendar"></i> <b>Historique de transactions</b></h4>
 	        			</div>
 	        			<div class="box-body">
 	        				<table class="table table-bordered" id="example1">
@@ -75,8 +75,8 @@
 	        						<th class="hidden"></th>
 	        						<th>Date</th>
 	        						<th>Transaction#</th>
-	        						<th>Amount</th>
-	        						<th>Full Details</th>
+	        						<th>Montant</th>
+	        						<th>Tous les détails</th>
 	        					</thead>
 	        					<tbody>
 	        					<?php
@@ -98,8 +98,8 @@
 	        										<td class='hidden'></td>
 	        										<td>".date('M d, Y', strtotime($row['sales_date']))."</td>
 	        										<td>".$row['pay_id']."</td>
-	        										<td>&#36; ".number_format($total, 2)."</td>
-	        										<td><button class='btn btn-sm btn-flat btn-info transact' data-id='".$row['id']."'><i class='fa fa-search'></i> View</button></td>
+	        										<td>TND ".number_format($total, 2)."</td>
+	        										<td><button class='btn btn-sm btn-flat btn-info transact' data-id='".$row['id']."'><i class='fa fa-search'></i> Voir</button></td>
 	        									</tr>
 	        								";
 	        							}

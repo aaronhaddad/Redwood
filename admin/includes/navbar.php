@@ -22,7 +22,7 @@
 
               <p>
                 <?php echo $admin['firstname'].' '.$admin['lastname']; ?>
-                <small>Member since <?php echo date('M. Y', strtotime($admin['created_on'])); ?></small>
+                <small>Membre depuis <?php echo date('M. Y', strtotime($admin['created_on'])); ?></small>
               </p>
             </li>
             <li class="user-footer">
